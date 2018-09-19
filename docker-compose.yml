@@ -1,10 +1,18 @@
-version: '3'
+version: '2'
 
 networks:
   frontend:
     driver: ${NETWORKS_DRIVER}
   backend:
     driver: ${NETWORKS_DRIVER}
+  webserver_network:
+    driver: ${NETWORKS_DRIVER}
+    ipam:
+        driver: default
+        config:
+        - subnet: "${WEBSERVER_SUBNET}"
+          gateway: "${WEBSERVER_GATEWAY}"
+
 
 volumes:
   mysql:
@@ -104,6 +112,11 @@ services:
         - ${APP_CODE_PATH_HOST}:${APP_CODE_PATH_CONTAINER}
       extra_hosts:
         - "dockerhost:${DOCKER_HOST_IP}"
+        - "makrodev.dock:${WEBSERVER_IP}"
+        - "api.makrodev.dock:${WEBSERVER_IP}"
+        - "noti.makrodev.dock:${WEBSERVER_IP}"
+        - "subscription.makrodev.dock:${WEBSERVER_IP}"
+        - "staging-apim.eggdigital.com:61.91.121.201"
       ports:
         - "${WORKSPACE_SSH_PORT}:22"
       tty: true
@@ -112,6 +125,7 @@ services:
       networks:
         - frontend
         - backend
+        - webserver_network
 
 ### PHP-FPM ##############################################
     php-fpm:
@@ -157,6 +171,11 @@ services:
         - "9000"
       extra_hosts:
         - "dockerhost:${DOCKER_HOST_IP}"
+        - "makrodev.dock:${WEBSERVER_IP}"
+        - "api.makrodev.dock:${WEBSERVER_IP}"
+        - "noti.makrodev.dock:${WEBSERVER_IP}"
+        - "subscription.makrodev.dock:${WEBSERVER_IP}"
+        - "staging-apim.eggdigital.com:61.91.121.201"
       environment:
         - PHP_IDE_CONFIG=${PHP_IDE_CONFIG}
         - DOCKER_HOST=tcp://docker-in-docker:2375
@@ -165,6 +184,7 @@ services:
         - workspace
       networks:
         - backend
+        - webserver_network
       links:
         - docker-in-docker
 
@@ -204,8 +224,17 @@ services:
       depends_on:
         - php-fpm
       networks:
-        - frontend
-        - backend
+        webserver_network:
+          ipv4_address: "${WEBSERVER_IP}"
+        frontend:
+        backend:
+      extra_hosts:
+        - "dockerhost:${DOCKER_HOST_IP}"
+        - "makrodev.dock:${WEBSERVER_IP}"
+        - "api.makrodev.dock:${WEBSERVER_IP}"
+        - "noti.makrodev.dock:${WEBSERVER_IP}"
+        - "subscription.makrodev.dock:${WEBSERVER_IP}"
+        - "staging-apim.eggdigital.com:61.91.121.201"
 
 ### Blackfire ########################################
     blackfire:
@@ -237,8 +266,17 @@ services:
       depends_on:
         - php-fpm
       networks:
-        - frontend
-        - backend
+        webserver_network:
+          ipv4_address: "${WEBSERVER_IP}"
+        frontend:
+        backend:
+      extra_hosts:
+        - "dockerhost:${DOCKER_HOST_IP}"
+        - "makrodev.dock:${WEBSERVER_IP}"
+        - "api.makrodev.dock:${WEBSERVER_IP}"
+        - "noti.makrodev.dock:${WEBSERVER_IP}"
+        - "subscription.makrodev.dock:${WEBSERVER_IP}"
+        - "staging-apim.eggdigital.com:61.91.121.201"
 
 ### HHVM #################################################
     hhvm:
@@ -843,6 +881,9 @@ services:
         - /var/run/docker.sock:/var/run/docker.sock
       extra_hosts:
         - "dockerhost:${DOCKER_HOST_IP}"
+        - "api.makrodev.dock:${DOCKER_HOST_IP}"
+        - "noti.makrodev.dock:${DOCKER_HOST_IP}"
+        - "subscription.makrodev.dock:${DOCKER_HOST_IP}"
       ports:
         - 9010:9000
       networks:
