@@ -653,10 +653,9 @@ services:
       volumes:
         - /dev/shm:/dev/shm
       networks:
-        webserver_network:
-          ipv4_address: "${WEBSERVER_IP}"
-        frontend:
-        backend:
+        - webserver_network
+        - frontend
+        - backend
       extra_hosts:
         - "dockerhost:${DOCKER_HOST_IP}"
         - "staging-apim.eggdigital.com:61.91.121.201"
