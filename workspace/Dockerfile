@@ -465,6 +465,7 @@ RUN if [ ${INSTALL_NODE} = true ]; then \
         npm install -g @vue/cli \
         ;fi \
         && ln -s `npm bin --global` /home/laradock/.node-bin \
+        && npm install apidoc -g \
 ;fi
 
 # Wouldn't execute when added to the RUN statement in the above block

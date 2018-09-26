@@ -112,11 +112,12 @@ services:
         - ${APP_CODE_PATH_HOST}:${APP_CODE_PATH_CONTAINER}
       extra_hosts:
         - "dockerhost:${DOCKER_HOST_IP}"
+        - "staging-apim.eggdigital.com:61.91.121.201"
         - "makrodev.dock:${WEBSERVER_IP}"
         - "api.makrodev.dock:${WEBSERVER_IP}"
         - "noti.makrodev.dock:${WEBSERVER_IP}"
         - "subscription.makrodev.dock:${WEBSERVER_IP}"
-        - "staging-apim.eggdigital.com:61.91.121.201"
+        - "portal.e-testing.dock:${WEBSERVER_IP}"
       ports:
         - "${WORKSPACE_SSH_PORT}:22"
       tty: true
@@ -171,11 +172,12 @@ services:
         - "9000"
       extra_hosts:
         - "dockerhost:${DOCKER_HOST_IP}"
+        - "staging-apim.eggdigital.com:61.91.121.201"
         - "makrodev.dock:${WEBSERVER_IP}"
         - "api.makrodev.dock:${WEBSERVER_IP}"
         - "noti.makrodev.dock:${WEBSERVER_IP}"
         - "subscription.makrodev.dock:${WEBSERVER_IP}"
-        - "staging-apim.eggdigital.com:61.91.121.201"
+        - "portal.e-testing.dock:${WEBSERVER_IP}"
       environment:
         - PHP_IDE_CONFIG=${PHP_IDE_CONFIG}
         - DOCKER_HOST=tcp://docker-in-docker:2375
@@ -203,6 +205,12 @@ services:
         - workspace
       extra_hosts:
         - "dockerhost:${DOCKER_HOST_IP}"
+        - "staging-apim.eggdigital.com:61.91.121.201"
+        - "makrodev.dock:${WEBSERVER_IP}"
+        - "api.makrodev.dock:${WEBSERVER_IP}"
+        - "noti.makrodev.dock:${WEBSERVER_IP}"
+        - "subscription.makrodev.dock:${WEBSERVER_IP}"
+        - "portal.e-testing.dock:${WEBSERVER_IP}"
       networks:
         - backend
 
@@ -230,11 +238,12 @@ services:
         backend:
       extra_hosts:
         - "dockerhost:${DOCKER_HOST_IP}"
+        - "staging-apim.eggdigital.com:61.91.121.201"
         - "makrodev.dock:${WEBSERVER_IP}"
         - "api.makrodev.dock:${WEBSERVER_IP}"
         - "noti.makrodev.dock:${WEBSERVER_IP}"
         - "subscription.makrodev.dock:${WEBSERVER_IP}"
-        - "staging-apim.eggdigital.com:61.91.121.201"
+        - "portal.e-testing.dock:${WEBSERVER_IP}"
 
 ### Blackfire ########################################
     blackfire:
@@ -272,11 +281,12 @@ services:
         backend:
       extra_hosts:
         - "dockerhost:${DOCKER_HOST_IP}"
+        - "staging-apim.eggdigital.com:61.91.121.201"
         - "makrodev.dock:${WEBSERVER_IP}"
         - "api.makrodev.dock:${WEBSERVER_IP}"
         - "noti.makrodev.dock:${WEBSERVER_IP}"
         - "subscription.makrodev.dock:${WEBSERVER_IP}"
-        - "staging-apim.eggdigital.com:61.91.121.201"
+        - "portal.e-testing.dock:${WEBSERVER_IP}"
 
 ### HHVM #################################################
     hhvm:
@@ -643,7 +653,18 @@ services:
       volumes:
         - /dev/shm:/dev/shm
       networks:
-        - frontend
+        webserver_network:
+          ipv4_address: "${WEBSERVER_IP}"
+        frontend:
+        backend:
+      extra_hosts:
+        - "dockerhost:${DOCKER_HOST_IP}"
+        - "staging-apim.eggdigital.com:61.91.121.201"
+        - "makrodev.dock:${WEBSERVER_IP}"
+        - "api.makrodev.dock:${WEBSERVER_IP}"
+        - "noti.makrodev.dock:${WEBSERVER_IP}"
+        - "subscription.makrodev.dock:${WEBSERVER_IP}"
+        - "portal.e-testing.dock:${WEBSERVER_IP}"
 
 ### Varnish ##########################################
     proxy:
@@ -881,9 +902,12 @@ services:
         - /var/run/docker.sock:/var/run/docker.sock
       extra_hosts:
         - "dockerhost:${DOCKER_HOST_IP}"
-        - "api.makrodev.dock:${DOCKER_HOST_IP}"
-        - "noti.makrodev.dock:${DOCKER_HOST_IP}"
-        - "subscription.makrodev.dock:${DOCKER_HOST_IP}"
+        - "staging-apim.eggdigital.com:61.91.121.201"
+        - "makrodev.dock:${WEBSERVER_IP}"
+        - "api.makrodev.dock:${WEBSERVER_IP}"
+        - "noti.makrodev.dock:${WEBSERVER_IP}"
+        - "subscription.makrodev.dock:${WEBSERVER_IP}"
+        - "portal.e-testing.dock:${WEBSERVER_IP}"
       ports:
         - 9010:9000
       networks:
