@@ -15,4 +15,7 @@
     </IfVersion>
   </Directory>
 
+  ErrorLog "/var/log/apache2/sample_error.log"
+  CustomLog "/var/log/apache2/sample_access.log" combined
+
 </VirtualHost>
