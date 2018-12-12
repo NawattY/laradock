@@ -121,6 +121,7 @@ services:
         - "noti.makrodev.test:${WEBSERVER_IP}"
         - "subscription.makrodev.test:${WEBSERVER_IP}"
         - "portal.e-testing.test:${WEBSERVER_IP}"
+        - "backoffice.e-testing.test:${WEBSERVER_IP}"
       ports:
         - "${WORKSPACE_SSH_PORT}:22"
       tty: true
@@ -186,6 +187,7 @@ services:
         - "noti.makrodev.test:${WEBSERVER_IP}"
         - "subscription.makrodev.test:${WEBSERVER_IP}"
         - "portal.e-testing.test:${WEBSERVER_IP}"
+        - "backoffice.e-testing.test:${WEBSERVER_IP}"
       environment:
         - PHP_IDE_CONFIG=${PHP_IDE_CONFIG}
         - DOCKER_HOST=tcp://docker-in-docker:2375
@@ -221,6 +223,7 @@ services:
         - "noti.makrodev.test:${WEBSERVER_IP}"
         - "subscription.makrodev.test:${WEBSERVER_IP}"
         - "portal.e-testing.test:${WEBSERVER_IP}"
+        - "backoffice.e-testing.test:${WEBSERVER_IP}"
       networks:
         - backend
 ### Laravel Horizon ############################################
@@ -273,6 +276,7 @@ services:
         - "noti.makrodev.test:${WEBSERVER_IP}"
         - "subscription.makrodev.test:${WEBSERVER_IP}"
         - "portal.e-testing.test:${WEBSERVER_IP}"
+        - "backoffice.e-testing.test:${WEBSERVER_IP}"
 
 ### Blackfire ########################################
     blackfire:
@@ -316,6 +320,7 @@ services:
         - "noti.makrodev.test:${WEBSERVER_IP}"
         - "subscription.makrodev.test:${WEBSERVER_IP}"
         - "portal.e-testing.test:${WEBSERVER_IP}"
+        - "backoffice.e-testing.test:${WEBSERVER_IP}"
 
 ### HHVM #################################################
     hhvm:
@@ -693,6 +698,7 @@ services:
         - "noti.makrodev.test:${WEBSERVER_IP}"
         - "subscription.makrodev.test:${WEBSERVER_IP}"
         - "portal.e-testing.test:${WEBSERVER_IP}"
+        - "backoffice.e-testing.test:${WEBSERVER_IP}"
 
 ### Varnish ##########################################
     proxy:
@@ -937,6 +943,7 @@ services:
         - "noti.makrodev.test:${WEBSERVER_IP}"
         - "subscription.makrodev.test:${WEBSERVER_IP}"
         - "portal.e-testing.test:${WEBSERVER_IP}"
+        - "backoffice.e-testing.test:${WEBSERVER_IP}"
       ports:
         - 9010:9000
       networks:
