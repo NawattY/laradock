@@ -136,14 +136,10 @@ services:
         - ${APP_CODE_PATH_HOST}:${APP_CODE_PATH_CONTAINER}${APP_CODE_CONTAINER_FLAG}
       extra_hosts:
         - "dockerhost:${DOCKER_HOST_IP}"
-        - "staging-apim.eggdigital.com:61.91.121.201"
-        - "makrodev.test:${WEBSERVER_IP}"
-        - "api.makrodev.test:${WEBSERVER_IP}"
-        - "noti.makrodev.test:${WEBSERVER_IP}"
-        - "subscription.makrodev.test:${WEBSERVER_IP}"
-        - "portal.e-testing.test:${WEBSERVER_IP}"
-        - "backoffice.e-testing.test:${WEBSERVER_IP}"
         - "freewifi.101.test:${WEBSERVER_IP}"
+        - "portal.101.test:${WEBSERVER_IP}"
+        - "backend.101.test:${WEBSERVER_IP}"
+        - "api.101.test:${WEBSERVER_IP}"
       ports:
         - "${WORKSPACE_SSH_PORT}:22"
       tty: true
@@ -217,14 +213,10 @@ services:
         - "9000"
       extra_hosts:
         - "dockerhost:${DOCKER_HOST_IP}"
-        - "staging-apim.eggdigital.com:61.91.121.201"
-        - "makrodev.test:${WEBSERVER_IP}"
-        - "api.makrodev.test:${WEBSERVER_IP}"
-        - "noti.makrodev.test:${WEBSERVER_IP}"
-        - "subscription.makrodev.test:${WEBSERVER_IP}"
-        - "portal.e-testing.test:${WEBSERVER_IP}"
-        - "backoffice.e-testing.test:${WEBSERVER_IP}"
         - "freewifi.101.test:${WEBSERVER_IP}"
+        - "portal.101.test:${WEBSERVER_IP}"
+        - "backend.101.test:${WEBSERVER_IP}"
+        - "api.101.test:${WEBSERVER_IP}"
       environment:
         - PHP_IDE_CONFIG=${PHP_IDE_CONFIG}
         - DOCKER_HOST=tcp://docker-in-docker:2375
@@ -266,14 +258,10 @@ services:
         - workspace
       extra_hosts:
         - "dockerhost:${DOCKER_HOST_IP}"
-        - "staging-apim.eggdigital.com:61.91.121.201"
-        - "makrodev.test:${WEBSERVER_IP}"
-        - "api.makrodev.test:${WEBSERVER_IP}"
-        - "noti.makrodev.test:${WEBSERVER_IP}"
-        - "subscription.makrodev.test:${WEBSERVER_IP}"
-        - "portal.e-testing.test:${WEBSERVER_IP}"
-        - "backoffice.e-testing.test:${WEBSERVER_IP}"
         - "freewifi.101.test:${WEBSERVER_IP}"
+        - "portal.101.test:${WEBSERVER_IP}"
+        - "backend.101.test:${WEBSERVER_IP}"
+        - "api.101.test:${WEBSERVER_IP}"
       networks:
         - backend
 ### Laravel Horizon ############################################
@@ -325,14 +313,10 @@ services:
         backend:
       extra_hosts:
         - "dockerhost:${DOCKER_HOST_IP}"
-        - "staging-apim.eggdigital.com:61.91.121.201"
-        - "makrodev.test:${WEBSERVER_IP}"
-        - "api.makrodev.test:${WEBSERVER_IP}"
-        - "noti.makrodev.test:${WEBSERVER_IP}"
-        - "subscription.makrodev.test:${WEBSERVER_IP}"
-        - "portal.e-testing.test:${WEBSERVER_IP}"
-        - "backoffice.e-testing.test:${WEBSERVER_IP}"
         - "freewifi.101.test:${WEBSERVER_IP}"
+        - "portal.101.test:${WEBSERVER_IP}"
+        - "backend.101.test:${WEBSERVER_IP}"
+        - "api.101.test:${WEBSERVER_IP}"
 
 ### Blackfire ########################################
     blackfire:
@@ -370,14 +354,10 @@ services:
         backend:
       extra_hosts:
         - "dockerhost:${DOCKER_HOST_IP}"
-        - "staging-apim.eggdigital.com:61.91.121.201"
-        - "makrodev.test:${WEBSERVER_IP}"
-        - "api.makrodev.test:${WEBSERVER_IP}"
-        - "noti.makrodev.test:${WEBSERVER_IP}"
-        - "subscription.makrodev.test:${WEBSERVER_IP}"
-        - "portal.e-testing.test:${WEBSERVER_IP}"
-        - "backoffice.e-testing.test:${WEBSERVER_IP}"
         - "freewifi.101.test:${WEBSERVER_IP}"
+        - "portal.101.test:${WEBSERVER_IP}"
+        - "backend.101.test:${WEBSERVER_IP}"
+        - "api.101.test:${WEBSERVER_IP}"
 
 ### HHVM #################################################
     hhvm:
@@ -853,14 +833,10 @@ services:
         - backend
       extra_hosts:
         - "dockerhost:${DOCKER_HOST_IP}"
-        - "staging-apim.eggdigital.com:61.91.121.201"
-        - "makrodev.test:${WEBSERVER_IP}"
-        - "api.makrodev.test:${WEBSERVER_IP}"
-        - "noti.makrodev.test:${WEBSERVER_IP}"
-        - "subscription.makrodev.test:${WEBSERVER_IP}"
-        - "portal.e-testing.test:${WEBSERVER_IP}"
-        - "backoffice.e-testing.test:${WEBSERVER_IP}"
         - "freewifi.101.test:${WEBSERVER_IP}"
+        - "portal.101.test:${WEBSERVER_IP}"
+        - "backend.101.test:${WEBSERVER_IP}"
+        - "api.101.test:${WEBSERVER_IP}"
 
 ### Varnish ##########################################
     proxy:
@@ -1129,14 +1105,10 @@ services:
         - /var/run/docker.sock:/var/run/docker.sock
       extra_hosts:
         - "dockerhost:${DOCKER_HOST_IP}"
-        - "staging-apim.eggdigital.com:61.91.121.201"
-        - "makrodev.test:${WEBSERVER_IP}"
-        - "api.makrodev.test:${WEBSERVER_IP}"
-        - "noti.makrodev.test:${WEBSERVER_IP}"
-        - "subscription.makrodev.test:${WEBSERVER_IP}"
-        - "portal.e-testing.test:${WEBSERVER_IP}"
-        - "backoffice.e-testing.test:${WEBSERVER_IP}"
         - "freewifi.101.test:${WEBSERVER_IP}"
+        - "portal.101.test:${WEBSERVER_IP}"
+        - "backend.101.test:${WEBSERVER_IP}"
+        - "api.101.test:${WEBSERVER_IP}"
       ports:
         - 9010:9000
       networks:
