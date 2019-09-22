@@ -140,6 +140,7 @@ services:
         - "portal.101.test:${WEBSERVER_IP}"
         - "backend.101.test:${WEBSERVER_IP}"
         - "api.101.test:${WEBSERVER_IP}"
+        - "laravel-package.test:${WEBSERVER_IP}"
       ports:
         - "${WORKSPACE_SSH_PORT}:22"
       tty: true
@@ -217,6 +218,7 @@ services:
         - "portal.101.test:${WEBSERVER_IP}"
         - "backend.101.test:${WEBSERVER_IP}"
         - "api.101.test:${WEBSERVER_IP}"
+        - "laravel-package.test:${WEBSERVER_IP}"
       environment:
         - PHP_IDE_CONFIG=${PHP_IDE_CONFIG}
         - DOCKER_HOST=tcp://docker-in-docker:2375
@@ -262,6 +264,7 @@ services:
         - "portal.101.test:${WEBSERVER_IP}"
         - "backend.101.test:${WEBSERVER_IP}"
         - "api.101.test:${WEBSERVER_IP}"
+        - "laravel-package.test:${WEBSERVER_IP}"
       networks:
         - backend
 ### Laravel Horizon ############################################
@@ -317,6 +320,7 @@ services:
         - "portal.101.test:${WEBSERVER_IP}"
         - "backend.101.test:${WEBSERVER_IP}"
         - "api.101.test:${WEBSERVER_IP}"
+        - "laravel-package.test:${WEBSERVER_IP}"
 
 ### Blackfire ########################################
     blackfire:
@@ -358,6 +362,7 @@ services:
         - "portal.101.test:${WEBSERVER_IP}"
         - "backend.101.test:${WEBSERVER_IP}"
         - "api.101.test:${WEBSERVER_IP}"
+        - "laravel-package.test:${WEBSERVER_IP}"
 
 ### HHVM #################################################
     hhvm:
@@ -837,6 +842,7 @@ services:
         - "portal.101.test:${WEBSERVER_IP}"
         - "backend.101.test:${WEBSERVER_IP}"
         - "api.101.test:${WEBSERVER_IP}"
+        - "laravel-package.test:${WEBSERVER_IP}"
 
 ### Varnish ##########################################
     proxy:
@@ -1109,6 +1115,7 @@ services:
         - "portal.101.test:${WEBSERVER_IP}"
         - "backend.101.test:${WEBSERVER_IP}"
         - "api.101.test:${WEBSERVER_IP}"
+        - "laravel-package.test:${WEBSERVER_IP}"
       ports:
         - 9010:9000
       networks:
