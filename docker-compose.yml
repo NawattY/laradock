@@ -141,6 +141,7 @@ services:
         - "freewifi.101.test:${WEBSERVER_IP}"
         - "portal.101.test:${WEBSERVER_IP}"
         - "backend.101.test:${WEBSERVER_IP}"
+        - "admin.101.test:${WEBSERVER_IP}"
         - "api.101.test:${WEBSERVER_IP}"
         - "laravel-package.test:${WEBSERVER_IP}"
       ports:
@@ -223,6 +224,7 @@ services:
         - "freewifi.101.test:${WEBSERVER_IP}"
         - "portal.101.test:${WEBSERVER_IP}"
         - "backend.101.test:${WEBSERVER_IP}"
+        - "admin.101.test:${WEBSERVER_IP}"
         - "api.101.test:${WEBSERVER_IP}"
         - "laravel-package.test:${WEBSERVER_IP}"
       environment:
@@ -271,6 +273,7 @@ services:
         - "freewifi.101.test:${WEBSERVER_IP}"
         - "portal.101.test:${WEBSERVER_IP}"
         - "backend.101.test:${WEBSERVER_IP}"
+        - "admin.101.test:${WEBSERVER_IP}"
         - "api.101.test:${WEBSERVER_IP}"
         - "laravel-package.test:${WEBSERVER_IP}"
       networks:
@@ -328,6 +331,7 @@ services:
         - "freewifi.101.test:${WEBSERVER_IP}"
         - "portal.101.test:${WEBSERVER_IP}"
         - "backend.101.test:${WEBSERVER_IP}"
+        - "admin.101.test:${WEBSERVER_IP}"
         - "api.101.test:${WEBSERVER_IP}"
         - "laravel-package.test:${WEBSERVER_IP}"
 
@@ -370,6 +374,7 @@ services:
         - "freewifi.101.test:${WEBSERVER_IP}"
         - "portal.101.test:${WEBSERVER_IP}"
         - "backend.101.test:${WEBSERVER_IP}"
+        - "admin.101.test:${WEBSERVER_IP}"
         - "api.101.test:${WEBSERVER_IP}"
         - "laravel-package.test:${WEBSERVER_IP}"
 
@@ -883,6 +888,7 @@ services:
         - "freewifi.101.test:${WEBSERVER_IP}"
         - "portal.101.test:${WEBSERVER_IP}"
         - "backend.101.test:${WEBSERVER_IP}"
+        - "admin.101.test:${WEBSERVER_IP}"
         - "api.101.test:${WEBSERVER_IP}"
         - "laravel-package.test:${WEBSERVER_IP}"
 
@@ -1156,6 +1162,7 @@ services:
         - "freewifi.101.test:${WEBSERVER_IP}"
         - "portal.101.test:${WEBSERVER_IP}"
         - "backend.101.test:${WEBSERVER_IP}"
+        - "admin.101.test:${WEBSERVER_IP}"
         - "api.101.test:${WEBSERVER_IP}"
         - "laravel-package.test:${WEBSERVER_IP}"
       ports:
