@@ -146,6 +146,7 @@ services:
         - "admin.101.test:${WEBSERVER_IP}"
         - "api.101.test:${WEBSERVER_IP}"
         - "laravel-package.test:${WEBSERVER_IP}"
+        - "api-cpm.test.test:${WEBSERVER_IP}"
       ports:
         - "${WORKSPACE_SSH_PORT}:22"
       tty: true
@@ -229,6 +230,7 @@ services:
         - "admin.101.test:${WEBSERVER_IP}"
         - "api.101.test:${WEBSERVER_IP}"
         - "laravel-package.test:${WEBSERVER_IP}"
+        - "api-cpm.test.test:${WEBSERVER_IP}"
       environment:
         - PHP_IDE_CONFIG=${PHP_IDE_CONFIG}
         - DOCKER_HOST=tcp://docker-in-docker:2375
@@ -278,6 +280,7 @@ services:
         - "admin.101.test:${WEBSERVER_IP}"
         - "api.101.test:${WEBSERVER_IP}"
         - "laravel-package.test:${WEBSERVER_IP}"
+        - "api-cpm.test.test:${WEBSERVER_IP}"
       networks:
         - backend
 ### Laravel Horizon ############################################
@@ -336,6 +339,7 @@ services:
         - "admin.101.test:${WEBSERVER_IP}"
         - "api.101.test:${WEBSERVER_IP}"
         - "laravel-package.test:${WEBSERVER_IP}"
+        - "api-cpm.test.test:${WEBSERVER_IP}"
 
 ### Blackfire ########################################
     blackfire:
@@ -379,6 +383,7 @@ services:
         - "admin.101.test:${WEBSERVER_IP}"
         - "api.101.test:${WEBSERVER_IP}"
         - "laravel-package.test:${WEBSERVER_IP}"
+        - "api-cpm.test.test:${WEBSERVER_IP}"
 
 ### HHVM #################################################
     hhvm:
@@ -893,6 +898,7 @@ services:
         - "admin.101.test:${WEBSERVER_IP}"
         - "api.101.test:${WEBSERVER_IP}"
         - "laravel-package.test:${WEBSERVER_IP}"
+        - "api-cpm.test.test:${WEBSERVER_IP}"
 
 ### Varnish ##########################################
     proxy:
@@ -1167,6 +1173,7 @@ services:
         - "admin.101.test:${WEBSERVER_IP}"
         - "api.101.test:${WEBSERVER_IP}"
         - "laravel-package.test:${WEBSERVER_IP}"
+        - "api-cpm.test.test:${WEBSERVER_IP}"
       ports:
         - 9010:9000
       networks:
