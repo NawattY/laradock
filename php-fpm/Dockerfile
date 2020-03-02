@@ -51,7 +51,6 @@ RUN set -xe; \
       #
       # next lines are here becase there is no auto build on dockerhub see https://github.com/laradock/laradock/pull/1903#issuecomment-463142846
       libzip-dev zip unzip && \
-      docker-php-ext-configure zip --with-libzip && \
       # Install the zip extension
       docker-php-ext-install zip && \
       php -m | grep -q 'zip'
@@ -106,6 +105,8 @@ RUN if [ ${INSTALL_SOAP} = true ]; then \
     # Install the soap extension
     rm /etc/apt/preferences.d/no-debian-php && \
     apt-get -y install libxml2-dev php-soap && \
+    apt-get clean && \
+    apt-get -y update && \
     docker-php-ext-install soap \
 ;fi
 
