@@ -50,14 +50,11 @@ RUN set -xe; \
       #
       # next lines are here becase there is no auto build on dockerhub see https://github.com/laradock/laradock/pull/1903#issuecomment-463142846
       libzip-dev zip unzip && \
-<<<<<<< HEAD
-=======
       if [ ${LARADOCK_PHP_VERSION} = "7.3" ] || [ ${LARADOCK_PHP_VERSION} = "7.4" ]; then \
         docker-php-ext-configure zip; \
       else \
         docker-php-ext-configure zip --with-libzip; \
       fi && \
->>>>>>> 8cde2474222cddfa7110445524c1fe4c5a87d4e5
       # Install the zip extension
       docker-php-ext-install zip && \
       php -m | grep -q 'zip'
