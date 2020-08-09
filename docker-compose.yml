@@ -167,14 +167,14 @@ services:
         - ~/.ssh:/root/.ssh
       extra_hosts:
         - "dockerhost:${DOCKER_HOST_IP}"
-        - "freewifi.101.test:${WEBSERVER_IP}"
-        - "portal.101.test:${WEBSERVER_IP}"
-        - "backend.101.test:${WEBSERVER_IP}"
-        - "admin.101.test:${WEBSERVER_IP}"
-        - "api.101.test:${WEBSERVER_IP}"
+        - "ecs-101-freewifi.example.test:${WEBSERVER_IP}"
+        - "ecs-101-portal.example.test:${WEBSERVER_IP}"
+        - "ecs-101-backend.example.test:${WEBSERVER_IP}"
+        - "ecs-101-admin.example.test:${WEBSERVER_IP}"
+        - "ecs-101-api.example.test:${WEBSERVER_IP}"
         - "laravel-package.test:${WEBSERVER_IP}"
-        - "api.cpm.test:${WEBSERVER_IP}"
-        - "api.sukishi.test:${WEBSERVER_IP}"
+        - "ecs-cpm-api.example.test:${WEBSERVER_IP}"
+        - "ecs-sukishi-api.example.test:${WEBSERVER_IP}"
       ports:
         - "${WORKSPACE_SSH_PORT}:22"
         - "${WORKSPACE_BROWSERSYNC_HOST_PORT}:3000"
@@ -273,14 +273,14 @@ services:
         - "9000"
       extra_hosts:
         - "dockerhost:${DOCKER_HOST_IP}"
-        - "freewifi.101.test:${WEBSERVER_IP}"
-        - "portal.101.test:${WEBSERVER_IP}"
-        - "backend.101.test:${WEBSERVER_IP}"
-        - "admin.101.test:${WEBSERVER_IP}"
-        - "api.101.test:${WEBSERVER_IP}"
+        - "ecs-101-freewifi.example.test:${WEBSERVER_IP}"
+        - "ecs-101-portal.example.test:${WEBSERVER_IP}"
+        - "ecs-101-backend.example.test:${WEBSERVER_IP}"
+        - "ecs-101-admin.example.test:${WEBSERVER_IP}"
+        - "ecs-101-api.example.test:${WEBSERVER_IP}"
         - "laravel-package.test:${WEBSERVER_IP}"
-        - "api.cpm.test:${WEBSERVER_IP}"
-        - "api.sukishi.test:${WEBSERVER_IP}"
+        - "ecs-cpm-api.example.test:${WEBSERVER_IP}"
+        - "ecs-sukishi-api.example.test:${WEBSERVER_IP}"
       environment:
         - PHP_IDE_CONFIG=${PHP_IDE_CONFIG}
         - DOCKER_HOST=tcp://docker-in-docker:2376
@@ -334,14 +334,14 @@ services:
         - workspace
       extra_hosts:
         - "dockerhost:${DOCKER_HOST_IP}"
-        - "freewifi.101.test:${WEBSERVER_IP}"
-        - "portal.101.test:${WEBSERVER_IP}"
-        - "backend.101.test:${WEBSERVER_IP}"
-        - "admin.101.test:${WEBSERVER_IP}"
-        - "api.101.test:${WEBSERVER_IP}"
+        - "ecs-101-freewifi.example.test:${WEBSERVER_IP}"
+        - "ecs-101-portal.example.test:${WEBSERVER_IP}"
+        - "ecs-101-backend.example.test:${WEBSERVER_IP}"
+        - "ecs-101-admin.example.test:${WEBSERVER_IP}"
+        - "ecs-101-api.example.test:${WEBSERVER_IP}"
         - "laravel-package.test:${WEBSERVER_IP}"
-        - "api.cpm.test:${WEBSERVER_IP}"
-        - "api.sukishi.test:${WEBSERVER_IP}"
+        - "ecs-cpm-api.example.test:${WEBSERVER_IP}"
+        - "ecs-sukishi-api.example.test:${WEBSERVER_IP}"
       networks:
         - backend
 ### Laravel Horizon ############################################
@@ -406,14 +406,14 @@ services:
         backend:
       extra_hosts:
         - "dockerhost:${DOCKER_HOST_IP}"
-        - "freewifi.101.test:${WEBSERVER_IP}"
-        - "portal.101.test:${WEBSERVER_IP}"
-        - "backend.101.test:${WEBSERVER_IP}"
-        - "admin.101.test:${WEBSERVER_IP}"
-        - "api.101.test:${WEBSERVER_IP}"
+        - "ecs-101-freewifi.example.test:${WEBSERVER_IP}"
+        - "ecs-101-portal.example.test:${WEBSERVER_IP}"
+        - "ecs-101-backend.example.test:${WEBSERVER_IP}"
+        - "ecs-101-admin.example.test:${WEBSERVER_IP}"
+        - "ecs-101-api.example.test:${WEBSERVER_IP}"
         - "laravel-package.test:${WEBSERVER_IP}"
-        - "api.cpm.test:${WEBSERVER_IP}"
-        - "api.sukishi.test:${WEBSERVER_IP}"
+        - "ecs-cpm-api.example.test:${WEBSERVER_IP}"
+        - "ecs-sukishi-api.example.test:${WEBSERVER_IP}"
 
 ### Blackfire ########################################
     blackfire:
@@ -439,6 +439,7 @@ services:
         - ${APP_CODE_PATH_HOST}:${APP_CODE_PATH_CONTAINER}${APP_CODE_CONTAINER_FLAG}
         - ${APACHE_HOST_LOG_PATH}:/var/log/apache2
         - ${APACHE_SITES_PATH}:/etc/apache2/sites-available
+        - ${APACHE_SSL_PATH}:/etc/apache2/ssl
       ports:
         - "${APACHE_HOST_HTTP_PORT}:80"
         - "${APACHE_HOST_HTTPS_PORT}:443"
@@ -451,14 +452,14 @@ services:
         backend:
       extra_hosts:
         - "dockerhost:${DOCKER_HOST_IP}"
-        - "freewifi.101.test:${WEBSERVER_IP}"
-        - "portal.101.test:${WEBSERVER_IP}"
-        - "backend.101.test:${WEBSERVER_IP}"
-        - "admin.101.test:${WEBSERVER_IP}"
-        - "api.101.test:${WEBSERVER_IP}"
+        - "ecs-101-freewifi.example.test:${WEBSERVER_IP}"
+        - "ecs-101-portal.example.test:${WEBSERVER_IP}"
+        - "ecs-101-backend.example.test:${WEBSERVER_IP}"
+        - "ecs-101-admin.example.test:${WEBSERVER_IP}"
+        - "ecs-101-api.example.test:${WEBSERVER_IP}"
         - "laravel-package.test:${WEBSERVER_IP}"
-        - "api.cpm.test:${WEBSERVER_IP}"
-        - "api.sukishi.test:${WEBSERVER_IP}"
+        - "ecs-cpm-api.example.test:${WEBSERVER_IP}"
+        - "ecs-sukishi-api.example.test:${WEBSERVER_IP}"
 
 ### HHVM #################################################
     hhvm:
@@ -995,14 +996,14 @@ services:
         - backend
       extra_hosts:
         - "dockerhost:${DOCKER_HOST_IP}"
-        - "freewifi.101.test:${WEBSERVER_IP}"
-        - "portal.101.test:${WEBSERVER_IP}"
-        - "backend.101.test:${WEBSERVER_IP}"
-        - "admin.101.test:${WEBSERVER_IP}"
-        - "api.101.test:${WEBSERVER_IP}"
+        - "ecs-101-freewifi.example.test:${WEBSERVER_IP}"
+        - "ecs-101-portal.example.test:${WEBSERVER_IP}"
+        - "ecs-101-backend.example.test:${WEBSERVER_IP}"
+        - "ecs-101-admin.example.test:${WEBSERVER_IP}"
+        - "ecs-101-api.example.test:${WEBSERVER_IP}"
         - "laravel-package.test:${WEBSERVER_IP}"
-        - "api.cpm.test:${WEBSERVER_IP}"
-        - "api.sukishi.test:${WEBSERVER_IP}"
+        - "ecs-cpm-api.example.test:${WEBSERVER_IP}"
+        - "ecs-sukishi-api.example.test:${WEBSERVER_IP}"
 
 ### Varnish ##########################################
     proxy:
@@ -1279,14 +1280,14 @@ services:
         - /var/run/docker.sock:/var/run/docker.sock
       extra_hosts:
         - "dockerhost:${DOCKER_HOST_IP}"
-        - "freewifi.101.test:${WEBSERVER_IP}"
-        - "portal.101.test:${WEBSERVER_IP}"
-        - "backend.101.test:${WEBSERVER_IP}"
-        - "admin.101.test:${WEBSERVER_IP}"
-        - "api.101.test:${WEBSERVER_IP}"
+        - "ecs-101-freewifi.example.test:${WEBSERVER_IP}"
+        - "ecs-101-portal.example.test:${WEBSERVER_IP}"
+        - "ecs-101-backend.example.test:${WEBSERVER_IP}"
+        - "ecs-101-admin.example.test:${WEBSERVER_IP}"
+        - "ecs-101-api.example.test:${WEBSERVER_IP}"
         - "laravel-package.test:${WEBSERVER_IP}"
-        - "api.cpm.test:${WEBSERVER_IP}"
-        - "api.sukishi.test:${WEBSERVER_IP}"
+        - "ecs-cpm-api.example.test:${WEBSERVER_IP}"
+        - "ecs-sukishi-api.example.test:${WEBSERVER_IP}"
       ports:
         - 9010:9000
       networks:
