@@ -182,6 +182,7 @@ services:
         - "laravel-package.test:${WEBSERVER_IP}"
         - "ecs-cpm-api.example.test:${WEBSERVER_IP}"
         - "ecs-sukishi-api.example.test:${WEBSERVER_IP}"
+        - "ecs-cpm-chester-api.example.test:${WEBSERVER_IP}"
       ports:
         - "${WORKSPACE_SSH_PORT}:22"
         - "${WORKSPACE_BROWSERSYNC_HOST_PORT}:3000"
@@ -289,6 +290,7 @@ services:
         - "laravel-package.test:${WEBSERVER_IP}"
         - "ecs-cpm-api.example.test:${WEBSERVER_IP}"
         - "ecs-sukishi-api.example.test:${WEBSERVER_IP}"
+        - "ecs-cpm-chester-api.example.test:${WEBSERVER_IP}"
       environment:
         - PHP_IDE_CONFIG=${PHP_IDE_CONFIG}
         - DOCKER_HOST=tcp://docker-in-docker:2376
@@ -350,6 +352,7 @@ services:
         - "laravel-package.test:${WEBSERVER_IP}"
         - "ecs-cpm-api.example.test:${WEBSERVER_IP}"
         - "ecs-sukishi-api.example.test:${WEBSERVER_IP}"
+        - "ecs-cpm-chester-api.example.test:${WEBSERVER_IP}"
       networks:
         - backend
 ### Laravel Horizon ############################################
@@ -422,6 +425,7 @@ services:
         - "laravel-package.test:${WEBSERVER_IP}"
         - "ecs-cpm-api.example.test:${WEBSERVER_IP}"
         - "ecs-sukishi-api.example.test:${WEBSERVER_IP}"
+        - "ecs-cpm-chester-api.example.test:${WEBSERVER_IP}"
 
 ### Blackfire ########################################
     blackfire:
@@ -469,6 +473,7 @@ services:
         - "laravel-package.test:${WEBSERVER_IP}"
         - "ecs-cpm-api.example.test:${WEBSERVER_IP}"
         - "ecs-sukishi-api.example.test:${WEBSERVER_IP}"
+        - "ecs-cpm-chester-api.example.test:${WEBSERVER_IP}"
 
 ### HHVM #################################################
     hhvm:
@@ -1053,6 +1058,7 @@ services:
         - "laravel-package.test:${WEBSERVER_IP}"
         - "ecs-cpm-api.example.test:${WEBSERVER_IP}"
         - "ecs-sukishi-api.example.test:${WEBSERVER_IP}"
+        - "ecs-cpm-chester-api.example.test:${WEBSERVER_IP}"
 
 ### Varnish ##########################################
     proxy:
@@ -1337,6 +1343,7 @@ services:
         - "laravel-package.test:${WEBSERVER_IP}"
         - "ecs-cpm-api.example.test:${WEBSERVER_IP}"
         - "ecs-sukishi-api.example.test:${WEBSERVER_IP}"
+        - "ecs-cpm-chester-api.example.test:${WEBSERVER_IP}"
       ports:
         - 9010:9000
       networks:
@@ -1893,3 +1900,24 @@ services:
         - ${DATA_PATH_HOST}/tomcat/logs:/usr/local/tomcat/logs
       # restart: always
 
+
+
+### MySQL ################################################
+    mysql57:
+      build:
+        context: ./mysql
+        args:
+          - MYSQL_VERSION=5.7
+      environment:
+        - MYSQL_DATABASE=${MYSQL_DATABASE}
+        - MYSQL_USER=${MYSQL_USER}
+        - MYSQL_PASSWORD=${MYSQL_PASSWORD}
+        - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
+        - TZ=${WORKSPACE_TIMEZONE}
+      volumes:
+        - ${DATA_PATH_HOST}/mysql/5.7:/var/lib/mysql
+        - ${MYSQL_ENTRYPOINT_INITDB}:/docker-entrypoint-initdb.d
+      ports:
+        - "3357:3306"
+      networks:
+        - backend
