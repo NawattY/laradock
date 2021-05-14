@@ -191,6 +191,10 @@ services:
         - "ecs-cpm-api.example.test:${WEBSERVER_IP}"
         - "ecs-sukishi-api.example.test:${WEBSERVER_IP}"
         - "ecs-cpm-chester-api.example.test:${WEBSERVER_IP}"
+        - "ecs-cpm-stamp.example.test:${WEBSERVER_IP}"
+        - "ecs-survey-api.example.test:${WEBSERVER_IP}"
+        - "ecs-survey-frontend.example.test:${WEBSERVER_IP}"
+        - "ecs-survey-backend.example.test:${WEBSERVER_IP}"
       ports:
         - "${WORKSPACE_SSH_PORT}:22"
         - "${WORKSPACE_BROWSERSYNC_HOST_PORT}:3000"
@@ -306,6 +310,10 @@ services:
         - "ecs-cpm-api.example.test:${WEBSERVER_IP}"
         - "ecs-sukishi-api.example.test:${WEBSERVER_IP}"
         - "ecs-cpm-chester-api.example.test:${WEBSERVER_IP}"
+        - "ecs-cpm-stamp.example.test:${WEBSERVER_IP}"
+        - "ecs-survey-api.example.test:${WEBSERVER_IP}"
+        - "ecs-survey-frontend.example.test:${WEBSERVER_IP}"
+        - "ecs-survey-backend.example.test:${WEBSERVER_IP}"
       environment:
         - PHP_IDE_CONFIG=${PHP_IDE_CONFIG}
         - DOCKER_HOST=tcp://docker-in-docker:2376
@@ -369,6 +377,10 @@ services:
         - "ecs-cpm-api.example.test:${WEBSERVER_IP}"
         - "ecs-sukishi-api.example.test:${WEBSERVER_IP}"
         - "ecs-cpm-chester-api.example.test:${WEBSERVER_IP}"
+        - "ecs-cpm-stamp.example.test:${WEBSERVER_IP}"
+        - "ecs-survey-api.example.test:${WEBSERVER_IP}"
+        - "ecs-survey-frontend.example.test:${WEBSERVER_IP}"
+        - "ecs-survey-backend.example.test:${WEBSERVER_IP}"
       networks:
         - backend
 ### Laravel Horizon ############################################
@@ -443,6 +455,10 @@ services:
         - "ecs-cpm-api.example.test:${WEBSERVER_IP}"
         - "ecs-sukishi-api.example.test:${WEBSERVER_IP}"
         - "ecs-cpm-chester-api.example.test:${WEBSERVER_IP}"
+        - "ecs-cpm-stamp.example.test:${WEBSERVER_IP}"
+        - "ecs-survey-api.example.test:${WEBSERVER_IP}"
+        - "ecs-survey-frontend.example.test:${WEBSERVER_IP}"
+        - "ecs-survey-backend.example.test:${WEBSERVER_IP}"
 
 ### Blackfire ########################################
     blackfire:
@@ -491,6 +507,10 @@ services:
         - "ecs-cpm-api.example.test:${WEBSERVER_IP}"
         - "ecs-sukishi-api.example.test:${WEBSERVER_IP}"
         - "ecs-cpm-chester-api.example.test:${WEBSERVER_IP}"
+        - "ecs-cpm-stamp.example.test:${WEBSERVER_IP}"
+        - "ecs-survey-api.example.test:${WEBSERVER_IP}"
+        - "ecs-survey-frontend.example.test:${WEBSERVER_IP}"
+        - "ecs-survey-backend.example.test:${WEBSERVER_IP}"
 
 ### HHVM #################################################
     hhvm:
@@ -1129,6 +1149,10 @@ services:
         - "ecs-cpm-api.example.test:${WEBSERVER_IP}"
         - "ecs-sukishi-api.example.test:${WEBSERVER_IP}"
         - "ecs-cpm-chester-api.example.test:${WEBSERVER_IP}"
+        - "ecs-cpm-stamp.example.test:${WEBSERVER_IP}"
+        - "ecs-survey-api.example.test:${WEBSERVER_IP}"
+        - "ecs-survey-frontend.example.test:${WEBSERVER_IP}"
+        - "ecs-survey-backend.example.test:${WEBSERVER_IP}"
 
 ### Varnish ##########################################
     proxy:
@@ -1414,6 +1438,10 @@ services:
         - "ecs-cpm-api.example.test:${WEBSERVER_IP}"
         - "ecs-sukishi-api.example.test:${WEBSERVER_IP}"
         - "ecs-cpm-chester-api.example.test:${WEBSERVER_IP}"
+        - "ecs-cpm-stamp.example.test:${WEBSERVER_IP}"
+        - "ecs-survey-api.example.test:${WEBSERVER_IP}"
+        - "ecs-survey-frontend.example.test:${WEBSERVER_IP}"
+        - "ecs-survey-backend.example.test:${WEBSERVER_IP}"
       ports:
         - 9010:9000
       networks:
